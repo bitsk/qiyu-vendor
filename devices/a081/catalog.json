@@ -4,7 +4,7 @@
   "platform": "Qiyu MIX A081 SM8250",
   "snapshot": "a081-vendor-r1",
   "stock_build_version": null,
-  "redistribution": "private archive; no public redistribution grant asserted",
+  "redistribution": "public archive per user instruction; original binary rights retained, no additional license grant asserted",
   "per_device_calibration_included": false,
   "requires_per_device_calibration": true,
   "device_tested_after_packaging": false,

@@ -23,7 +23,7 @@ def main():
    src=a.source_root/entry['source_file']
    if src.is_symlink() or not src.is_file() or digest(src)!=entry['sha256']:raise ValueError('Source checksum mismatch: '+entry['source_file'])
  a.output.mkdir(parents=True)
- lock={'schema':1,'repository':'bitsk/qiyu-vendor','visibility':'private','tag':catalog['snapshot'],'model':catalog['model'],'catalog_sha256':digest(a.catalog),'per_device_calibration_included':False,'bundles':{}}
+ lock={'schema':1,'repository':'bitsk/qiyu-vendor','visibility':'public','tag':catalog['snapshot'],'model':catalog['model'],'catalog_sha256':digest(a.catalog),'per_device_calibration_included':False,'bundles':{}}
  for name,bundle in catalog['bundles'].items():
   entries=[{k:e[k] for k in ['path','sha256','bytes','mode','install_path']} for e in bundle['files']];asset=catalog['model']+'-'+name+'-'+catalog['snapshot']+'.tar.gz';archive=a.output/asset
   manifest={'schema':1,'model':catalog['model'],'snapshot':catalog['snapshot'],'bundle':name,'files':entries,'device_tested_after_packaging':False}
