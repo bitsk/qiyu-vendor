@@ -2229,6 +2229,39 @@
         }
       ],
       "uncompressed_bytes": 85707920
+    },
+    "controller-dsp": {
+      "files": [
+        {
+          "path": "root/system/lib/libsnpe_dsp_domains_v2.so",
+          "sha256": "11bb36da436ffeb661c78e9391625c4d6464e74177e961adfc7a44f93a1b29de",
+          "bytes": 17984,
+          "mode": 420,
+          "source_file": "blobs/11bb36da436ffeb661c78e9391625c4d6464e74177e961adfc7a44f93a1b29de",
+          "install_path": "opt/a081-controller-bionic/system/lib/libsnpe_dsp_domains_v2.so",
+          "kind": "snpe-dynamically-loaded-host-plugin"
+        },
+        {
+          "path": "root/system/lib/libsnpe_dsp_domains_v2_system.so",
+          "sha256": "b709d251f4ad08761b8744e51d3a852d8fa725e266a59856beb9a5ed4a33137e",
+          "bytes": 17980,
+          "mode": 420,
+          "source_file": "blobs/b709d251f4ad08761b8744e51d3a852d8fa725e266a59856beb9a5ed4a33137e",
+          "install_path": "opt/a081-controller-bionic/system/lib/libsnpe_dsp_domains_v2_system.so",
+          "kind": "snpe-dynamically-loaded-host-plugin"
+        },
+        {
+          "path": "root/system/lib/libsnpe_dsp_domains_v3.so",
+          "sha256": "90c2f9b41ab5265cfad8ea8b86591b625bafa180254f1bf31b0dda8fc9db92bb",
+          "bytes": 13760,
+          "mode": 420,
+          "source_file": "blobs/90c2f9b41ab5265cfad8ea8b86591b625bafa180254f1bf31b0dda8fc9db92bb",
+          "install_path": "opt/a081-controller-bionic/system/lib/libsnpe_dsp_domains_v3.so",
+          "kind": "snpe-dynamically-loaded-host-plugin"
+        }
+      ],
+      "uncompressed_bytes": 49724,
+      "note": "SNPE runtime plugins loaded dynamically, beyond the base DT_NEEDED closure; mainline RPC shim remains a separately built open-source component"
     }
   }
 }
