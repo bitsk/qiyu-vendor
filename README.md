@@ -2,11 +2,11 @@
 
 奇遇型号的原厂固件、DSP 资源、SDK 与配套二进制依赖的私有归档。Git 只保存按型号组织的清单、来源摘要和打包工具；压缩包存 GitHub Release。正常构建直接下载固定版本并校验，不依赖整份原厂镜像或工作站历史 build 路径。
 
-A081 首批分为 firmware（GPU / ADSP / CDSP / SLPI / Wi-Fi / Bluetooth 及 regulatory 数据）、qvr（DSP runtime、SNPE skeleton、型号默认 config6）、controller（原厂 SDK、ARM32 Bionic DT_NEEDED 依赖和型号默认配置）。清单逐文件记录原来源、大小、模式与 SHA-256。快照日期不是原厂固件版本，未核实的原厂版本保持 unknown。
+A081 首批共 247 个文件，分为 firmware（GPU / ADSP / CDSP / SLPI / Wi-Fi / Bluetooth 及 regulatory 数据）、qvr（DSP runtime、SNPE skeleton、型号默认 config6）、controller（原厂 SDK、ARM32 Bionic DT_NEEDED 依赖和型号默认配置）、controller-dsp（3 个运行时动态加载的 SNPE 主机插件）。清单逐文件记录原来源、大小、模式与 SHA-256。快照日期不是原厂固件版本，未核实的原厂版本保持 unknown。
 
 ## 使用
 
-在 qiyu-rootfs 中运行 `python3 tools/vendor.py fetch --output /new/vendor-cache`，需要能读取本私有仓库的 GitHub 登录；具体固定 Release、asset 摘要和安装目标来自 devices/a081/vendor.lock.json。firmware-only 可加 `--bundle firmware`。
+在 qiyu-rootfs 中运行 `python3 tools/vendor.py fetch --output /new/vendor-cache`，需要能读取本私有仓库的 GitHub 登录；完整四包清单为 Release 的 vendor.complete.lock.json（vendor.lock.json 保留基础三包记录）；具体固定 Release、asset 摘要和安装目标来自 devices/a081/vendor.lock.json。firmware-only 可加 `--bundle firmware`。
 
 `python3 tools/vendor.py verify --cache /path/to/vendor-cache` 可离线逐文件核对。rootfs `assemble --vendor-cache /path/to/vendor-cache` 消费这些文件；手柄构建器也可通过 `--vendor-cache` 读取已归档的 ARM32 libc++，无需回到原镜像提取。
 
