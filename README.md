@@ -6,7 +6,7 @@ A081 首批共 247 个文件，分为 firmware（GPU / ADSP / CDSP / SLPI / Wi-F
 
 ## 使用
 
-在 qiyu-rootfs 中运行 `python3 tools/vendor.py fetch --output /new/vendor-cache`，下载工具当前使用 gh 登录，仓库和 Release 资产也可直接公开访问；完整四包清单为 Release 的 vendor.complete.lock.json（vendor.lock.json 保留基础三包记录）；具体固定 Release、asset 摘要和安装目标来自 devices/a081/vendor.lock.json。firmware-only 可加 `--bundle firmware`。
+在 qiyu-rootfs 中运行 `python3 tools/vendor.py fetch --output /new/vendor-cache`，下载工具当前使用 gh 登录，仓库和 Release 资产也可直接公开访问；完整四包清单为 Release 的 vendor.lock.json；具体固定 Release、asset 摘要和安装目标来自 devices/a081/vendor.lock.json。firmware-only 可加 `--bundle firmware`。
 
 `python3 tools/vendor.py verify --cache /path/to/vendor-cache` 可离线逐文件核对。rootfs `assemble --vendor-cache /path/to/vendor-cache` 消费这些文件；手柄构建器也可通过 `--vendor-cache` 读取已归档的 ARM32 libc++，无需回到原镜像提取。
 
